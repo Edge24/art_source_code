@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    
+    body{
+      background-color: black;
+      color: green;
+    }
+
+    @keyframes marquee {
+    0% {
+      transform: translateX(90%);
+    }
+    100% {
+      transform: translateX(-90%);
+    }
+  }
+
+  ::selection{
+  background-color: green;
+  color: #fff;
+}
+
+::-webkit-scrollbar{
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #5a5959;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(0, 255, 0);
+}
+
+.zed{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+
+  .box{
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.297), rgba(40, 28, 53, 0.639)) no-repeat;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(62, 60, 60);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    width: 77%;
+    margin: 40px 120px;
+    padding: 20px;
+    border-radius: 34px;
+  }
+
+  .flex{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .flex .hook{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+
+  .btn a:hover{
+    color: rgb(0, 255, 0);
+  }
+
+  .code pre{
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .code pre::-webkit-scrollbar{
+    width: 4px;
+  }
+
+  .code pre::-webkit-scrollbar:hover{
+    width: 9px;
+  }
+
+  .code pre::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+
+  .code pre::-webkit-scrollbar-thumb{
+    background-color: #5a5959;
+  }
+
+  .code pre:hover{
+    border: 1px solid green;
+  }
+
+  .flex h2{
+    text-align: center;
+  }
+
+  .flex a i{
+    background-color: none;
+    font-size: 24px;
+  }
+
+  .flex #icon{
+    text-align: right;
+  }
+
+  .main{
+    margin-top: 20px;
+    margin-right: 8px;
+    align-items: center;
+  }
+
+  .main pre{
+    width: 100%;
+    border-radius: 2px;
+    height: 62vh;
+    border: 1px solid #605f5fc1;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    padding: 4px;
+    resize: none;
+    margin-bottom: 6px;
+  }
+
+#copy-button{
+    margin-left: 10px;
+    background-color: #2e2e2ecc;
+    color: #fff;
+    padding: 4px;
+    width: 9%;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    margin-left: 91%;
+    letter-spacing: 1px;
+}
+
+#copy-button:hover{
+  background-color: white;
+  color: black;
+}
+
+.main .text{
+  padding: 4px;
+  margin-bottom: 6px;
+  background-color: rgb(157, 154, 154);
+  color: #000;
+  width: 80px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+#context-menu {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.297), rgba(40, 28, 53, 0.639)) no-repeat;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(62, 60, 60);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    width: 10em;
+    padding: 5px;
+    font-size: 1.3rem;
+    position: fixed;
+    visibility: hidden;
+  }
+  #context-menu a{
+    text-decoration: none;
+    color: white;
+  }
+  .item {
+    padding: 0.3em 1.2em;
+    border-radius: 8px;
+  }
+  .item:hover {
+    background: rgba(162, 160, 160, 0.142);
+    backdrop-filter: blur(6px);
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+    </style>
+</head>
+<body> 
+  <audio id="background-music" src="/img/silence-22855.mp3" autoplay loop></audio>
+
+    <div class="con">
+      
+      <div class="zed">
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="9"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="9"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="9"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="6"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="4"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="8"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      <marquee scrollamount="2"  behavior="alternate">11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 110011 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00 11 001 01 001100 110 11001 111 001 10 00</marquee>
+      </div>
+
+      <div class="box">
+
+        <div class="flex">
+          <div class="btn"><a href="/index.html">Back</a></div>
+          <h2>The Edge</h2>
+          <div class="hook">
+            <div class="btn" id="icon"><a href="https://www.instagram.com/aritrabera_art/"><i class='fab fa-instagram'></i></a></div>
+            <div class="btn" id="icon"><a href="https://in.pinterest.com/aritrabera24/"><i class='fab fa-pinterest'></i></a></div>
+          </div>
+        </div>
+
+        <div class="main">
+          <div class="text">
+            <p>HTML</p>
+          </div>
+          <div class="code">
+            <pre>
+              <code id="text-to-copy">
+                &lt;html&gt;
+                &lt;head&gt;
+                  &lt;title&gt;My Webpage&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                &lt;html&gt;
+                &lt;head&gt;
+                  &lt;title&gt;My Webpage&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                &lt;html&gt;
+                &lt;head&gt;
+                  &lt;title&gt;My Webpage&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+              </code>
+            </pre>
+            <div id="copy-button">Copy</div>
+          </div>
+
+          <div class="text">
+            <p>CSS</p>
+          </div>
+          <div class="code">
+            <pre>
+              <code id="text-to-copy">
+                *&#123;
+                  margin : 0;
+                  padding : 0;
+                &#125;
+              </code>
+            </pre>
+            <div id="copy-button">Copy</div>
+          </div>
+
+          <div class="text">
+            <p>JS</p>
+          </div>
+          <div class="code">
+            <pre>
+              <code id="text-to-copy">
+
+              </code>
+            </pre>
+            <div id="copy-button">Copy</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="context-menu">
+        <div class="item" id="refreshButton">Refreash</div>
+        <div class="item"><a href="/gallery.html">Gallery</a></div>
+        <div class="item"><a href="/about.html">About me</a></div>
+        <div class="item"><a href="/chat.html">Chat Room</a></div>
+        <div class="item"><a href="/index.html">Go Back</a></div>
+      </div>
+
+    </div>
+
+    <script>
+      function copyText() {
+  // Get the element containing the text
+  var textElement = document.getElementById("text-to-copy");
+
+  // Create a range object and select the text
+  var range = document.createRange();
+  range.selectNode(textElement);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+
+  // Copy the selected text to the clipboard
+  document.execCommand("copy");
+
+  // Provide feedback to the user
+  var copyButton = document.getElementById("copy-button");
+  copyButton.innerHTML = "Copied!";
+  setTimeout(function() {
+    copyButton.innerHTML = "Copy";
+  }, 2000); // Reset button text after 2 seconds
+}
+    </script>
+
+    <script>
+      var copyButton = document.getElementById("copy-button");
+copyButton.addEventListener("click", copyText);
+    </script>
+
+    <script>
+      //Events for desktop and touch
+let events = ["contextmenu", "touchstart"];
+//initial declaration
+var timeout;
+//for double tap
+var lastTap = 0;
+//refer menu div
+let contextMenu = document.getElementById("context-menu");
+
+//same function for both events
+events.forEach((eventType) => {
+  document.addEventListener(
+    eventType,
+    (e) => {
+      e.preventDefault();
+      //x and y position of mouse or touch
+      let mouseX = e.clientX || e.touches[0].clientX;
+      let mouseY = e.clientY || e.touches[0].clientY;
+      //height and width of menu
+      let menuHeight = contextMenu.getBoundingClientRect().height;
+      let menuWidth = contextMenu.getBoundingClientRect().width;
+      //width and height of screen
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      //If user clicks/touches near right corner
+      if (width - mouseX <= 200) {
+        contextMenu.style.borderRadius = "16px 16px 16px 16px";
+        contextMenu.style.left = width - menuWidth + "px";
+        contextMenu.style.top = mouseY + "px";
+        //right bottom
+        if (height - mouseY <= 200) {
+          contextMenu.style.top = mouseY - menuHeight + "px";
+          contextMenu.style.borderRadius = "16px 16px 16px 16px";
+        }
+      }
+      //left
+      else {
+        contextMenu.style.borderRadius = "16px 16px 16px 16px";
+        contextMenu.style.left = mouseX + "px";
+        contextMenu.style.top = mouseY + "px";
+        //left bottom
+        if (height - mouseY <= 200) {
+          contextMenu.style.top = mouseY - menuHeight + "px";
+          contextMenu.style.borderRadius = "16px 16px 16px 16px";
+        }
+      }
+      //display the menu
+      contextMenu.style.visibility = "visible";
+    },
+    { passive: false }
+  );
+});
+
+//for double tap(works on touch devices)
+document.addEventListener("touchend", function (e) {
+  //current time
+  var currentTime = new Date().getTime();
+  //gap between two gaps
+  var tapLength = currentTime - lastTap;
+  //clear previous timeouts(if any)
+  clearTimeout(timeout);
+  //if user taps twice in 500ms
+  if (tapLength < 500 && tapLength > 0) {
+    //hide menu
+    contextMenu.style.visibility = "hidden";
+    e.preventDefault();
+  } else {
+    //timeout if user doesn't tap after 500ms
+    timeout = setTimeout(function () {
+      clearTimeout(timeout);
+    }, 500);
+  }
+  //lastTap set to current time
+  lastTap = currentTime;
+});
+
+//click outside the menu to close it (for click devices)
+document.addEventListener("click", function (e) {
+  if (!contextMenu.contains(e.target)) {
+    contextMenu.style.visibility = "hidden";
+  }
+});
+    </script>
+
+    <script>
+      //Reload
+const refreshButton = document.getElementById('refreshButton');
+
+refreshButton.addEventListener('click', function() {
+    location.reload();
+});
+    </script>
+
+<script>
+  var audio = document.getElementById("background-music");
+  audio.volume = 0.9; // Set initial volume to 10% (0.1)
+
+  audio.addEventListener('ended', function() {
+      audio.currentTime = 0;
+      audio.play();
+  });
+</script>
+
+</body>
+</html>
